@@ -7,10 +7,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-    <h1>Main Page</h1>
+    <h1>Detail Page</h1>
+    <hr>
+    ${dto.id}/${dto.writer}/${dto.title}/${dto.content}
 
-    <a href="list">목록</a><br>
-    <a href="command?writer=ccc$title=ccc&content=ccc">결과</a><br>
+    <a href="delete?id=${dto.id}">삭제</a>
+    <a href="list">목록</a>
+
+    
 
 </body>
 </body>

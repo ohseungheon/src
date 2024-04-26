@@ -11,6 +11,9 @@
 </head>
 <body>
     <h1>list page</h1>
+    <div>
+        <a href="writeForm">글 작성하기</a>
+    </div>
     <table border="1">
     <thead>
         <td>번호</td>
@@ -24,7 +27,7 @@
         <tr>
             <td>${dto.getId()}</td>
             <td>${dto.getWriter()}</td>
-            <td>${dto.getTitle()}</td>
+            <td><a href="detail?id=${dto.getId()}">${dto.getTitle()}</a></td>
             <td>${dto.getContent()}</td>
             <td><a href="delete?id=${dto.getId()}">x</td>
         </tr>

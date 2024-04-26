@@ -1,11 +1,37 @@
-<!DOCTYPE mapper
-  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-  
-  <mapper namespace="com.example.test01.dao.ISimpleBbsDao">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.test01.dao.ISimpleBbsDao">
 	<select id="getList" resultType="com.example.test01.domain.SimpleBbsDto">
 		SELECT * FROM simpleBBS
-	</select>	
-	
-	
-  </mapper>
+	</select>
+
+	<select id="getDto">
+		SELECT * FROM simpleBBS Where id = #{id}
+	</select>
+
+	<insert id="write">
+		INSERT INTO simpleBBS (writer,title,content)
+		values (#{param1},#{param2},#{param3})
+	</insert>
+
+	<insert id="write2">
+		INSERT INTO simpleBBS (writer,title,content)
+		values (#{arg0},#{arg1},#{arg2})
+	</insert>
+
+	<!--
+	<insert id="write3">
+		INSERT INTO simpleBBS (writer,title,content)
+		values (#{writer},#{title},#{content})
+	</insert>
+-->
+	<insert id="write3">
+		INSERT INTO simpleBBS (writer,title,content)
+		values (#{dto.writer},#{dto.title},#{dto.content})
+	</insert>
+	<delete id="delete">
+		delete from simpleBBS Where id = #{id}
+
+	</delete>
+
+</mapper>
