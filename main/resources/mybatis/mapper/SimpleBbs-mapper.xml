@@ -1,0 +1,11 @@
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.example.test01.dao.ISimpleBbsDao">
+	<select id="getList" resultType="com.example.test01.domain.SimpleBbsDto">
+		SELECT * FROM simpleBBS
+	</select>	
+	
+	
+  </mapper>
